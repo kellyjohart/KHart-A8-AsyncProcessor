@@ -15,7 +15,7 @@ public class AsynchronousProcessor {
     }
 
     public Map<Integer, Integer> processNumbers() {
-        ExecutorService executor = Executors.newFixedThreadPool(50);
+        ExecutorService executor = Executors.newCachedThreadPool();
         try {
             for (int i = 0; i < 1000; i++) {
                 executor.execute(() ->
